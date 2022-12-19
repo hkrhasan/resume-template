@@ -17,6 +17,7 @@
         --hue-color: 249; /* Purple -> 249, Green -> 142, Blue -> 230 */
         --first-color: hsl(var(--hue-color), 100%, 67%);
         --second-color: hsl(var(--hue-color), 0%, 85%);
+        --body-color: hsl(var(--hue-color), 100%, 99%);
       }
 
       /* Reset Default Style ---------------------------- */
@@ -71,10 +72,10 @@
       /* Resume style------------------------------------ */
       .resume {
         margin: 0 auto;
-        padding: 0.3in;
+        padding: 0.5in;
         width: 8.5in;
         height: 12in;
-        background-color: rgb(250, 255, 255);
+        background-color: var(--body-color);
         box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
       }
 
@@ -119,6 +120,42 @@
         height: 250px;
         width: 100%;
         background-color: var(--second-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image__left-triangle {
+        width: 0;
+        height: 0;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+
+        border-top: 80px solid var(--body-color);
+        position: absolute;
+        bottom: -56px;
+        left: -80px;
+        transform: rotate(32deg);
+      }
+
+      .image__right-triangle {
+        width: 0;
+        height: 0;
+        border-left: 120px solid transparent;
+        border-right: 120px solid transparent;
+
+        border-top: 120px solid var(--body-color);
+        position: absolute;
+        bottom: -56px;
+        right: -95px;
+        transform: rotate(-32deg);
+      }
+
+      .image__logo {
+        height: 80px;
+        width: 80px;
+        right: 0;
+        bottom: 23px;
+        position: absolute;
       }
 
       /* Style resume education-------------------------- */
@@ -222,10 +259,18 @@
         <div class="grid resume__body">
           <div class="grid resume__body-left__col">
             <div class="resume__profile">
-              <div class="image"></div>
+              <div class="image">
+                <div class="image__left-triangle"></div>
+                <div class="image__right-triangle"></div>
+                <img
+                  src="assets/img/vector-2.svg"
+                  class="image__logo"
+                  alt="logo"
+                />
+              </div>
             </div>
             <div class="grid resume__educations">
-              <h2>Education</h2>
+              <h2>EDUCATION</h2>
               <div class="grid resume__education">
                 <h5 class="resume__education-title">DEGREE NAME</h5>
                 <p class="resume__education-university">
@@ -243,7 +288,7 @@
             </div>
             <div class="separator"></div>
             <div class="grid resume__skills">
-              <h2>Skills</h2>
+              <h2>SKILLS</h2>
               <ul class="grid resume__skills-list">
                 <li class="resume__skills-skill">Adobe Photoshop</li>
                 <li class="resume__skills-skill">Adobe Pagemaker</li>
