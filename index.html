@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+
+    <!-- Start: Css----------------------------- -->
+    <style>
+      /* Import Font */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      /* Variables -------------------------------------- */
+      :root {
+        /* Colors --------------------------------------- */
+        --hue-color: 249; /* Purple -> 249, Green -> 142, Blue -> 230 */
+        --first-color: hsl(var(--hue-color), 100%, 67%);
+        --second-color: hsl(var(--hue-color), 0%, 85%);
+      }
+
+      /* Reset Default Style ---------------------------- */
+      *,
+      ::after,
+      ::before {
+        margin: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        font-size: 0.875rem;
+        line-height: normal;
+        color: #000;
+        background-color: #000;
+      }
+
+      /* Base and reusable classes----------------------- */
+      .grid {
+        display: grid;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .gap-5 {
+        gap: 0.5rem;
+      }
+
+      .circle {
+        height: 0.9rem;
+        width: 0.9rem;
+        background-color: var(--first-color);
+        border-radius: 50%;
+      }
+
+      .separator {
+        height: 2px;
+        background-color: var(--first-color);
+        width: 100%;
+      }
+
+      /* Resume style------------------------------------ */
+      .resume {
+        margin: 0 auto;
+        padding: 0.3in;
+        width: 8.5in;
+        height: 12in;
+        background-color: rgb(250, 255, 255);
+        box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+      }
+
+      .resume__container {
+        gap: 3rem;
+      }
+
+      /* Style Titles ----------------------------------- */
+      .resume__title-logo {
+        height: 25px;
+        width: 25px;
+      }
+
+      .resume__title {
+        font-size: 2.5rem;
+      }
+
+      /* Style contact----------------------------------- */
+      .resume__contacts-list {
+        list-style: none;
+      }
+
+      .resume__contacts-item h5 {
+        line-height: 2;
+      }
+
+      /* Style resume body------------------------------- */
+      .resume__body {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: "body_left_col body_right_col";
+        column-gap: 2.5rem;
+        align-items: start;
+      }
+
+      /* Style resume body left column ------------------- */
+      .resume__body-left__col {
+        grid-area: body_left_col;
+        gap: 2.5rem;
+      }
+
+      .image {
+        height: 250px;
+        width: 100%;
+        background-color: var(--second-color);
+      }
+
+      /* Style resume education-------------------------- */
+      .resume__educations,
+      .resume__experiences {
+        gap: 1.5rem;
+      }
+
+      .resume__education,
+      .resume__experience {
+        gap: 0.5rem;
+      }
+
+      .resume__education-university,
+      .resume__education-year {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      /* Style resume skill ----------------------------- */
+      .resume__skills {
+        gap: 1.5rem;
+      }
+
+      .resume__skills-list {
+        gap: 0.5rem;
+      }
+
+      .resume__skills-skill {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .resume__body-right__col {
+        grid-area: body_right_col;
+        gap: 2.5rem;
+      }
+
+      .right__col-section {
+        gap: 1.5rem;
+      }
+
+      /* Handle print style ----------------------------- */
+      @media print {
+        @page {
+          size: 8.5in 12in;
+        }
+
+        .resume {
+          height: 100%;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 0;
+          line-height: 18px;
+        }
+      }
+    </style>
+    <!-- End: Css------------------------------- -->
+  </head>
+  <body>
+    <div class="resume">
+      <div class="grid resume__container">
+        <div class="flex items-center justify-between resume__header">
+          <div class="resume__title-container">
+            <div class="grid">
+              <img
+                src="assets/img/vector-1.svg"
+                class="resume__title-logo"
+                alt="logo"
+              />
+              <p class="resume__title">VISHAL</p>
+              <p class="resume__title">KUMAR <strong>RAWAT</strong></p>
+            </div>
+            <h5>BACKEND DEVELOPER</h5>
+          </div>
+          <div class="resume__contacts-container">
+            <ul class="resume__contacts-list">
+              <li class="flex items-center gap-5 resume__contacts-item">
+                <div class="circle"></div>
+                <h5>Address Street 1, City - 110009 India</h5>
+              </li>
+              <li class="flex items-center gap-5 resume__contacts-item">
+                <div class="circle"></div>
+                <h5>+91 9560403991</h5>
+              </li>
+              <li class="flex items-center gap-5 resume__contacts-item">
+                <div class="circle"></div>
+                <h5>hkrhasan8010@gmail.com</h5>
+              </li>
+              <li class="flex items-center gap-5 resume__contacts-item">
+                <div class="circle"></div>
+                <h5>www.google.com</h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid resume__body">
+          <div class="grid resume__body-left__col">
+            <div class="resume__profile">
+              <div class="image"></div>
+            </div>
+            <div class="grid resume__educations">
+              <h2>Education</h2>
+              <div class="grid resume__education">
+                <h5 class="resume__education-title">DEGREE NAME</h5>
+                <p class="resume__education-university">
+                  UNIVERSITY NAME | INDIA
+                </p>
+                <p class="resume__education-year">2012 - 2016</p>
+              </div>
+              <div class="grid resume__education">
+                <h5 class="resume__education-title">DEGREE NAME</h5>
+                <p class="resume__education-university">
+                  UNIVERSITY NAME | INDIA
+                </p>
+                <p class="resume__education-year">2012 - 2016</p>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div class="grid resume__skills">
+              <h2>Skills</h2>
+              <ul class="grid resume__skills-list">
+                <li class="resume__skills-skill">Adobe Photoshop</li>
+                <li class="resume__skills-skill">Adobe Pagemaker</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid resume__body-right__col">
+            <div class="grid right__col-section resume__about">
+              <h2>ABOUT ME</h2>
+              <div class="">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum
+                </p>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div class="grid right__col-section resume__experience">
+              <h2>EXPERIENCE</h2>
+              <div class="grid resume__experiences">
+                <div class="grid resume__experience">
+                  <div class="grid gap-5 resume__experience-titles">
+                    <h5 class="resume__education-title">
+                      YOUR POSITION | 2016 - 2017
+                    </h5>
+                    <h6 class="resume__education-subtitle">
+                      COMPANY NAME | CITY
+                    </h6>
+                  </div>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </div>
+                <div class="grid resume__experience">
+                  <div class="grid gap-5 resume__experience-titles">
+                    <h5 class="resume__education-title">
+                      YOUR POSITION | 2016 - 2017
+                    </h5>
+                    <h6 class="resume__education-subtitle">
+                      COMPANY NAME | CITY
+                    </h6>
+                  </div>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </div>
+                <div class="grid resume__experience">
+                  <div class="grid gap-5 resume__experience-titles">
+                    <h5 class="resume__education-title">
+                      YOUR POSITION | 2016 - 2017
+                    </h5>
+                    <h6 class="resume__education-subtitle">
+                      COMPANY NAME | CITY
+                    </h6>
+                  </div>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
